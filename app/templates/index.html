@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+<!-- Styles block -->
+
+{%block styles%}
+    <!-- the "super function" tells Jinja not to override any code that is defined in the block -->
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="images" href="{{url_for('static',filename='images')}}">
+    <!-- <img src="{{url_for('static',filename='images/background.jpg')}}" alt="background-image"> -->
+{%endblock%}
+
+<!-- Content block -->
+{%block content%}
+<div class="container">
+    <div class="jumbotron" style="background-color: rgba(245, 245, 245, 0.4); color: rgba(21, 21, 21)">
+            <h1> Welcome to Pitcher!</h1>
+    </div>
+
+    <div>
+        <a href="{{url_for('main.new_pitch')}}" class="btn btn-success">Create a pitch + </a>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
+            <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
+                <div class="panel-heading">
+                    <h3>Interview Pitches</h3>
+                </div>
+            </div>
+            <div>
+                <a href="{{url_for('main.interview_pitches')}}" class="btn btn-info -center">View</a>
+            </div>
+            <hr>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
+            <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
+                <div class="panel-heading">
+                    <h3>Product Pitches</h3>
+                </div>
+            </div>
+            <div>
+                <a href="{{url_for('main.product_pitches')}}" class="btn btn-info -center">View</a>
+            </div>
+            <hr>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
+            <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
+                <div class="panel-heading">
+                    <h3>Promotion Pitches</h3>
+                </div>
+            </div>
+            <div>
+                <a href="{{url_for('main.promotion_pitches')}}" class="btn btn-info -center">View</a>
+            </div>
+            <hr>
+        </div>
+
+    </div>
+</div>
+{%endblock%}
