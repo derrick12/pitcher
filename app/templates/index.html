@@ -6,19 +6,44 @@
     <!-- the "super function" tells Jinja not to override any code that is defined in the block -->
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-    <link rel="images" href="{{url_for('static',filename='images')}}">
+    <link rel="images" href="{{url_for('static',filename='../static/photos/')}}">
     <!-- <img src="{{url_for('static',filename='images/background.jpg')}}" alt="background-image"> -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
 {%endblock%}
 
 <!-- Content block -->
 {%block content%}
 <div class="container">
-    <div class="jumbotron" style="background-color: rgba(245, 245, 245, 0.4); color: rgba(21, 21, 21)">
+    <div class="jumbotron text-center" style="background-color: rgba(245, 245, 245, 0.4); color: rgba(21, 21, 21)">
             <h1> Welcome to Pitcher!</h1>
     </div>
 
-    <div>
-        <a href="{{url_for('main.new_pitch')}}" class="btn btn-success">Create a pitch + </a>
+    <div class="container">
+        <p style="text-align:center;">
+            <a href="{{url_for('main.new_pitch')}}" class="btn btn-success">Create a pitch + </a>
+        </p>
     </div>
 
     <br>
@@ -26,40 +51,51 @@
     <br>
     <br>
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
-            <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
-                <div class="panel-heading">
-                    <h3>Interview Pitches</h3>
-                </div>
-            </div>
-            <div>
+        <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <h3>Interview Pitches</h3>
+            <br>
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{url_for('static', filename='../static/photos/background.jpg')}}" alt="inteview_pitch">
+            <br><br>
+            <div class="card-body">
+            <p class="card-text">If you’re looking for a job, one of the first tasks on your to-do list should be crafting an ideal "elevator pitch."</p>
+            <br><br>
+            <div style="text-align:center;">
                 <a href="{{url_for('main.interview_pitches')}}" class="btn btn-info -center">View</a>
             </div>
-            <hr>
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
-            <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
-                <div class="panel-heading">
-                    <h3>Product Pitches</h3>
-                </div>
             </div>
-            <div>
+        </div>
+        </div>
+        <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <h3>Product Pitches</h3>
+            <br>
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{url_for('static', filename='../static/photos/background3.jpg')}}" alt="inteview_pitch">
+            <br><br>
+            <div class="card-body">
+            <p class="card-text">The key to successfully pitching a new product idea to a potential investor is being concise and clear. </p>
+            <br><br>
+            <div style="text-align:center;">
                 <a href="{{url_for('main.product_pitches')}}" class="btn btn-info -center">View</a>
             </div>
-            <hr>
+            </div>
+        </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 50px;">
-            <div class="panel" style="background-color: rgba(245, 245, 245, 0.4);">
-                <div class="panel-heading">
-                    <h3>Promotion Pitches</h3>
-                </div>
-            </div>
-            <div>
+        <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <h3>Promotion Pitches</h3>
+            <br>
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{url_for('static', filename='../static/photos/background2.jpg')}}" alt="inteview_pitch">
+            <br><br>
+            <div class="card-body">
+            <p class="card-text">Moving up the corporate ladder may not be easy. Consistent hard work and high performance are a given.</p>
+            <br><br>
+            <div style="text-align:center;">
                 <a href="{{url_for('main.promotion_pitches')}}" class="btn btn-info -center">View</a>
             </div>
-            <hr>
+            </div>
+        </div>
         </div>
 
     </div>
