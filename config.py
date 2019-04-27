@@ -15,8 +15,8 @@ class Config:
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = os.environ.get("questech254@gmail.com")
-    MAIL_PASSWORD = os.environ.get("7AS6UmjDMtmLLGm")
+    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
+    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     SUBJECT_PREFIX = 'Pitcher'
     SENDER_EMAIL = 'derrick@moringaschool.com'
 
@@ -28,8 +28,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = os.environ.get("postgresql+psycopg2://derrick:architect@localhost/pitcher")
-    
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class TestConfig(Config):
     '''
@@ -40,7 +39,6 @@ class TestConfig(Config):
         Config: The parent configuration class with General configuration settings
     '''
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://derrick:architect@localhost/pitcher_test'
-    
 
 class DevConfig(Config):
     '''
